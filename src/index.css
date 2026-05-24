@@ -27,3 +27,71 @@ html {
   scroll-behavior: smooth;
 }
 
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  
+  /* Hide main website UI when printing */
+  #main-viewport-content,
+  header,
+  footer,
+  aside,
+  nav,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Reset layout constraints of fixed overlay for clean static print flow */
+  #executive-cv-overlay {
+    position: static !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Make sure container doesn't truncate or round edges on print */
+  #executive-cv-overlay > div {
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .print-paper {
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Standard print spacing adjustments to fit perfectly in a single paper sheet */
+  h1 {
+    font-size: 20pt !important;
+    margin-bottom: 2pt !important;
+  }
+  
+  h2 {
+    font-size: 11pt !important;
+    border-bottom: 1px solid #000000 !important;
+  }
+
+  p, li, span, div {
+    font-size: 9.5pt !important;
+    line-height: 1.35 !important;
+  }
+
+  .grid {
+    display: grid !important;
+  }
+}
+
