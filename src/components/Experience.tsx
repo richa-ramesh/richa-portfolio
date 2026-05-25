@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Briefcase, Calendar, MapPin, ChevronDown, ChevronUp, Sparkles, Filter } from 'lucide-react';
 import { resumeData } from '../data';
-import { Experience as ExperienceType } from '../types';
 
 export default function Experience() {
   const { experience } = resumeData;
@@ -56,16 +55,16 @@ export default function Experience() {
 
   return (
     <section id="experience-section" className="py-20 px-6 md:px-12 max-w-7xl mx-auto border-t border-slate-900/60 relative">
-      <div className="absolute left-10 top-20 w-80 h-80 bg-purple-500/5 rounded-full filter blur-3xl opacity-20 pointer-events-none" />
+      <div className="absolute left-10 top-20 w-80 h-80 bg-rose-950/10 rounded-full filter blur-3xl opacity-20 pointer-events-none" />
 
       {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
         <div className="space-y-2">
-          <div className="flex items-center space-x-2 text-indigo-400 font-mono text-xs uppercase tracking-widest leading-none">
+          <div className="flex items-center space-x-2 text-rose-500 font-mono text-xs uppercase tracking-widest leading-none">
             <Briefcase size={14} />
             <span>Interactive Timeline</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-display font-medium text-white tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-display font-medium text-white tracking-tight font-serif">
             Work History
           </h2>
         </div>
@@ -78,11 +77,11 @@ export default function Experience() {
           </div>
           {(['all', 'industry', 'academic', 'internship'] as const).map((mode) => (
             <button
-              key={mode}
+               key={mode}
               onClick={() => setFilterMode(mode)}
               className={`cursor-pointer px-3.5 py-1.5 rounded-lg transition-all capitalize duration-200 ${
                 filterMode === mode
-                  ? 'bg-indigo-600 text-white shadow-md'
+                  ? 'bg-rose-800 text-white shadow-md'
                   : 'hover:text-white hover:bg-slate-900'
               }`}
             >
@@ -107,7 +106,7 @@ export default function Experience() {
                 layoutId={`exp-card-${trueIdx}`}
                 className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                   isExpanded
-                    ? 'bg-[#0a0c14] border-indigo-500/30 shadow-[0_4px_30px_rgba(99,102,241,0.06)]'
+                    ? 'bg-[#0a0c14] border-rose-900/40 shadow-[0_4px_30px_rgba(159,18,57,0.08)]'
                     : 'bg-[#07090e]/80 border-slate-900/80 hover:border-slate-800 hover:bg-[#090b12]'
                 }`}
               >
@@ -118,11 +117,11 @@ export default function Experience() {
                 >
                   <div className="space-y-1.5 flex-1">
                     <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1">
-                      <span className="text-sm font-mono text-indigo-400 tracking-wider">
+                      <span className="text-sm font-mono text-rose-400 tracking-wider">
                         {exp.company}
                       </span>
                       {containsMetric && (
-                        <span className="inline-flex items-center space-x-1 bg-emerald-500/10 border border-emerald-500/25 px-2 py-0.5 rounded text-[9px] font-mono text-emerald-400 uppercase tracking-widest font-normal">
+                        <span className="inline-flex items-center space-x-1 bg-purple-500/10 border border-purple-500/25 px-2 py-0.5 rounded text-[9px] font-mono text-purple-400 uppercase tracking-widest font-normal">
                           High Impact
                         </span>
                       )}
@@ -131,7 +130,7 @@ export default function Experience() {
                       </span>
                     </div>
 
-                    <h3 className="text-lg font-display text-white font-medium leading-snug">
+                    <h3 className="text-lg font-display text-white font-medium leading-snug font-serif">
                       {exp.role}
                     </h3>
 
@@ -148,7 +147,7 @@ export default function Experience() {
                     </div>
                   </div>
 
-                  <div className="w-8 h-8 rounded-lg bg-slate-950 border border-slate-900 flex items-center justify-center text-slate-400">
+                  <div className="w-8 h-8 rounded-lg bg-slate-950 border border-slate-800 flex items-center justify-center text-slate-400">
                     {isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                   </div>
                 </button>
@@ -162,20 +161,20 @@ export default function Experience() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                     >
-                      <div className="border-t border-slate-900 p-5 pt-4 bg-[#08090f]/40 space-y-3.5">
+                      <div className="border-t border-slate-910 p-5 pt-4 bg-[#08090f]/40 space-y-3.5">
                         {exp.bullets.map((bullet, k) => {
                           // Inline highlighters for numbers/percents to lock visual attention
                           const parts = bullet.split(/(\d+%\s*|\d+,\d+\s*|\b\d+\s*users\b|\b\d+\s*events\b|\b\d+x\b|\bsub-second\b|\bsub-2-second\b)/gi);
 
                           return (
                             <div key={k} className="flex items-start space-x-3 text-slate-300 text-sm leading-relaxed">
-                              <span className="text-indigo-500/60 select-none mt-1.5 font-mono text-xs">•</span>
-                              <span className="font-sans">
+                              <span className="text-rose-500/60 select-none mt-1.5 font-mono text-xs">•</span>
+                              <span className="font-serif">
                                 {parts.map((part, pIdx) => {
                                   // Regex tests for high impact words
                                   const isImportantVal = /%|\d+,\d+|\b\d+\s*users\b|\b\d+\s*events\b|\d+x|sub-/i.test(part);
                                   return isImportantVal ? (
-                                    <strong key={pIdx} className="text-emerald-400 font-semibold font-mono bg-emerald-500/5 border border-emerald-500/10 px-1 rounded mx-0.5">
+                                    <strong key={pIdx} className="text-[#f43f5e] font-semibold font-mono bg-rose-500/5 border border-rose-500/10 px-1 rounded mx-0.5">
                                       {part}
                                     </strong>
                                   ) : (
@@ -197,9 +196,9 @@ export default function Experience() {
 
         {/* RIGHT COLUMN: Auto-pulled Impact Highlights panel */}
         <div className="lg:col-span-4 lg:sticky lg:top-24 space-y-6">
-          <div className="p-6 rounded-2xl bg-[#090b12]/95 border border-slate-950 shadow-xl space-y-5">
-            <div className="flex items-center space-x-2 border-b border-indigo-950 pb-4">
-              <Sparkles size={16} className="text-indigo-400" />
+          <div className="p-6 rounded-2xl bg-[#090b12]/95 border border-slate-900 shadow-xl space-y-5">
+            <div className="flex items-center space-x-2 border-b border-rose-950 pb-4">
+              <Sparkles size={16} className="text-rose-500" />
               <div>
                 <h3 className="text-sm font-mono text-white tracking-wide uppercase">
                   Impact Highlights
@@ -214,24 +213,24 @@ export default function Experience() {
               {displayedHighlights.map((hl, itemIdx) => (
                 <div
                   key={itemIdx}
-                  className="p-3.5 rounded-xl bg-[#06080e] border border-slate-900 hover:border-indigo-500/30 transition-all duration-300 space-y-2 group"
+                  className="p-3.5 rounded-xl bg-[#06080e] border border-slate-900 hover:border-rose-500/30 transition-all duration-300 space-y-2 group"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-mono font-medium text-emerald-400 uppercase tracking-widest bg-emerald-500/5 px-2 py-0.5 rounded border border-emerald-500/10">
+                    <span className="text-[10px] font-mono font-medium text-purple-450 uppercase tracking-widest bg-purple-500/5 px-2 py-0.5 rounded border border-purple-500/10">
                       {hl.metricText}
                     </span>
-                    <span className="text-[9px] font-mono text-slate-500 group-hover:text-indigo-400 transition-colors">
+                    <span className="text-[9px] font-mono text-slate-500 group-hover:text-rose-400 transition-colors">
                       {hl.company}
                     </span>
                   </div>
-                  <p className="text-[11px] text-slate-400 leading-relaxed font-sans line-clamp-2 italic">
+                  <p className="text-[11px] text-slate-400 leading-relaxed font-serif line-clamp-2 italic">
                     "{hl.bullet}"
                   </p>
                 </div>
               ))}
             </div>
             
-            <div className="pt-2 text-[10px] font-mono text-zinc-600 text-center uppercase tracking-wide">
+            <div className="pt-2 text-[10px] font-mono text-zinc-650 text-center uppercase tracking-wide">
               No modifications of facts / raw data only
             </div>
           </div>

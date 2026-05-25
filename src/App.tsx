@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import Experience from './components/Experience';
 import Achievements from './components/Achievements';
 import Skills from './components/Skills';
+import Projects from './components/Projects';
 import Publications from './components/Publications';
 import Education from './components/Education';
 import ResumeDownload from './components/ResumeDownload';
@@ -23,7 +24,7 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-screen text-slate-100 bg-[#030712] selection:bg-indigo-500/30 selection:text-white">
+    <div className="relative min-h-screen text-slate-100 bg-[#030712] selection:bg-rose-500/30 selection:text-white">
       {/* Dynamic Animated Background Mesh & Canvas Particles */}
       <AnimatedBackground />
 
@@ -58,6 +59,9 @@ export default function App() {
             {/* Grouped Skills Stack */}
             <Skills />
 
+            {/* Dynamic Interactive Projects */}
+            <Projects />
+
             {/* Academic Scholarly publications */}
             <Publications />
 
@@ -69,7 +73,7 @@ export default function App() {
           <footer className="bg-[#05070d]/80 border-t border-slate-900/60 py-12 px-6 backdrop-blur-md">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center text-center md:text-left">
               <div className="space-y-3">
-                <div className="flex items-center justify-center md:justify-start space-x-2 text-indigo-400 font-mono text-xs uppercase tracking-widest">
+                <div className="flex items-center justify-center md:justify-start space-x-2 text-rose-500 font-mono text-xs uppercase tracking-widest leading-none">
                   <Sparkles size={12} />
                   <span>Richa Rameshkrishna Portfolio</span>
                 </div>

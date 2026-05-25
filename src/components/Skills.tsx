@@ -8,13 +8,13 @@ export default function Skills() {
   const getGradientByCat = (cat: string) => {
     switch (cat.toLowerCase()) {
       case 'languages':
-        return 'from-indigo-500/10 via-slate-900 to-slate-950 hover:border-indigo-500/30';
+        return 'from-rose-500/10 via-slate-900 to-slate-950 hover:border-rose-500/30';
       case 'backend & cloud':
         return 'from-purple-500/10 via-slate-900 to-slate-950 hover:border-purple-500/30';
       case 'frontend & databases':
-        return 'from-emerald-500/10 via-slate-900 to-slate-950 hover:border-emerald-500/30';
+        return 'from-purple-650/10 via-slate-900 to-slate-950 hover:border-purple-600/30';
       case 'ml / ai':
-        return 'from-amber-500/10 via-slate-900 to-slate-950 hover:border-amber-500/30';
+        return 'from-red-500/10 via-slate-900 to-slate-950 hover:border-red-500/30';
       default:
         return 'from-slate-900 via-slate-900 to-slate-950 hover:border-slate-800';
     }
@@ -22,21 +22,21 @@ export default function Skills() {
 
   const getBulletColor = (cat: string) => {
     switch (cat.toLowerCase()) {
-      case 'languages': return 'text-indigo-400 bg-indigo-500/5 border-indigo-500/10';
+      case 'languages': return 'text-rose-400 bg-rose-500/5 border-rose-500/10';
       case 'backend & cloud': return 'text-purple-400 bg-purple-500/5 border-purple-500/10';
-      case 'frontend & databases': return 'text-emerald-400 bg-emerald-500/5 border-emerald-500/10';
-      case 'ml / ai': return 'text-amber-400 bg-amber-500/5 border-amber-500/10';
+      case 'frontend & databases': return 'text-purple-300 bg-purple-500/5 border-purple-500/10';
+      case 'ml / ai': return 'text-red-400 bg-red-500/5 border-red-500/10';
       default: return 'text-slate-400 bg-slate-500/5 border-slate-500/10';
     }
   };
 
   return (
     <section id="skills-section" className="py-20 px-6 md:px-12 max-w-7xl mx-auto border-t border-slate-900/60 relative">
-      <div className="absolute left-1/3 bottom-5 w-80 h-80 bg-emerald-500/5 rounded-full filter blur-3xl opacity-25 pointer-events-none" />
+      <div className="absolute left-1/3 bottom-5 w-80 h-80 bg-rose-950/10 rounded-full filter blur-3xl opacity-25 pointer-events-none" />
 
       {/* Headline Header */}
       <div className="space-y-2 mb-12">
-        <div className="flex items-center space-x-2 text-indigo-400 font-mono text-xs uppercase tracking-widest leading-none">
+        <div className="flex items-center space-x-2 text-rose-500 font-mono text-xs uppercase tracking-widest leading-none">
           <Layers size={14} />
           <span>Core Competence</span>
         </div>
@@ -61,7 +61,7 @@ export default function Skills() {
           >
             <div>
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-sm font-mono text-white uppercase tracking-wider font-semibold border-b border-indigo-950/40 pb-2 w-full">
+                <h3 className="text-sm font-mono text-white uppercase tracking-wider font-semibold border-b border-rose-950/40 pb-2 w-full">
                   {group.category}
                 </h3>
               </div>

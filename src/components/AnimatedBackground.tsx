@@ -46,9 +46,11 @@ export default function AnimatedBackground() {
         this.vx = (Math.random() - 0.5) * 0.15;
         this.vy = (Math.random() - 0.5) * 0.15;
         this.radius = Math.random() * 1.5 + 0.8;
-        // Soft blue/indigo/violet particles
-        const hue = Math.random() > 0.5 ? 230 : 260;
-        this.color = `rgba(${hue === 230 ? '99, 102, 241' : '139, 92, 246'}, ${Math.random() * 0.25 + 0.1})`;
+        // Soft maroon and rich purple particles
+        const isMaroon = Math.random() > 0.5;
+        this.color = isMaroon 
+          ? `rgba(159, 18, 57, ${Math.random() * 0.25 + 0.15})` // Maroon/Rose-800 (#9f1239)
+          : `rgba(126, 34, 206, ${Math.random() * 0.25 + 0.15})`; // Rich Purple (#7e22ce)
       }
 
       update(width: number, height: number) {
@@ -65,7 +67,7 @@ export default function AnimatedBackground() {
         context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         context.fillStyle = this.color;
         context.shadowBlur = 4;
-        context.shadowColor = 'rgba(99, 102, 241, 0.4)';
+        context.shadowColor = this.color;
         context.fill();
         context.shadowBlur = 0; // reset
       }
@@ -101,20 +103,20 @@ export default function AnimatedBackground() {
       const g1_rad = Math.min(width, height) * 0.65;
       
       const grad1 = ctx.createRadialGradient(g1_x, g1_y, 0, g1_x, g1_y, g1_rad);
-      grad1.addColorStop(0, 'rgba(30, 27, 75, 0.22)'); // Deep dark indigo
-      grad1.addColorStop(0.5, 'rgba(15, 23, 42, 0.1)');
-      grad1.addColorStop(1, 'rgba(3, 7, 18, 0)');
+      grad1.addColorStop(0, 'rgba(126, 34, 206, 0.12)'); // Deep purple accent glow
+      grad1.addColorStop(0.5, 'rgba(3, 7, 18, 0.1)');
+      grad1.addColorStop(1, 'rgba(0, 0, 0, 0)');
 
       const g2_x = width * (0.7 + Math.cos(tempTime * 1.8) * 0.15);
       const g2_y = height * (0.6 + Math.sin(tempTime * 2.2) * 0.12);
       const g2_rad = Math.min(width, height) * 0.75;
 
       const grad2 = ctx.createRadialGradient(g2_x, g2_y, 0, g2_x, g2_y, g2_rad);
-      grad2.addColorStop(0, 'rgba(88, 28, 135, 0.15)'); // Deep dark slate/purple
-      grad2.addColorStop(0.5, 'rgba(9, 9, 11, 0.05)');
-      grad2.addColorStop(1, 'rgba(3, 7, 18, 0)');
+      grad2.addColorStop(0, 'rgba(159, 18, 57, 0.1)'); // Deep maroon accent glow
+      grad2.addColorStop(0.5, 'rgba(2, 2, 4, 0.05)');
+      grad2.addColorStop(1, 'rgba(0, 0, 0, 0)');
 
-      ctx.fillStyle = 'rgba(3, 7, 18, 1)'; // Base dark background color
+      ctx.fillStyle = 'rgba(0, 0, 0, 1)'; // Deep Black Shaded base background
       ctx.fillRect(0, 0, width, height);
 
       ctx.fillStyle = grad1;
@@ -124,7 +126,7 @@ export default function AnimatedBackground() {
       ctx.fillRect(0, 0, width, height);
 
       // Subtle Grid layout (very low contrast)
-      ctx.strokeStyle = 'rgba(99, 102, 241, 0.015)';
+      ctx.strokeStyle = 'rgba(159, 18, 57, 0.012)';
       ctx.lineWidth = 1;
       const gridSize = 80;
       for (let x = 0; x < width; x += gridSize) {
@@ -150,8 +152,8 @@ export default function AnimatedBackground() {
 
           if (dist < connectionDistance) {
             // Stronger opacity the closer they are, but overall very subtle (max 0.1 opacity)
-            const alpha = (1 - dist / connectionDistance) * 0.06;
-            ctx.strokeStyle = `rgba(139, 92, 246, ${alpha})`;
+            const alpha = (1 - dist / connectionDistance) * 0.07;
+            ctx.strokeStyle = `rgba(159, 18, 57, ${alpha})`;
             ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
@@ -182,7 +184,7 @@ export default function AnimatedBackground() {
   if (reducedMotion) {
     return (
       <div 
-        className="fixed inset-0 w-full h-full -z-50 pointer-events-none bg-radial-at-t from-[#12102e] via-[#09090b] to-[#030712]"
+        className="fixed inset-0 w-full h-full -z-50 pointer-events-none bg-gradient-to-tr from-[#000000] via-[#0c0005] to-[#05000c]"
         style={{ pointerEvents: 'none' }}
       />
     );

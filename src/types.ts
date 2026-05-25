@@ -31,6 +31,7 @@ export interface Publication {
   title: string;
   subtitle: string;
   bullets?: string[];
+  url?: string;
 }
 
 export interface SkillGroup {

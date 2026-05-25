@@ -60,21 +60,21 @@ export default function Navigation({ onOpenPdfMode }: NavigationProps) {
   return (
     <>
       {/* Scroll indicator bar pinned strictly to page top */}
-      <div className="fixed top-0 left-0 right-0 h-[2px] bg-slate-900/40 z-50 pointer-events-none">
+      <div className="fixed top-0 left-0 right-0 h-[2px] bg-slate-950/40 z-50 pointer-events-none">
         <div
-          className="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 shadow-md shadow-indigo-500/50"
+          className="h-full bg-gradient-to-r from-rose-600 via-purple-500 to-red-650 shadow-md shadow-rose-600/30"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
 
       {/* Floating Header (Desktop nav styling) - Hidden on Mobile */}
-      <header className="fixed top-4 left-1/2 -translate-x-1/2 z-40 w-[90%] max-w-4xl hidden md:flex items-center justify-between p-2 rounded-2xl bg-[#090a0f]/70 border border-slate-900/60 backdrop-blur-md select-none shadow-xl">
+      <header className="fixed top-4 left-1/2 -translate-x-1/2 z-40 w-[90%] max-w-4xl hidden md:flex items-center justify-between p-2 rounded-2xl bg-[#000000]/80 border border-slate-900/60 backdrop-blur-md select-none shadow-xl">
         {/* Name initial branding */}
         <button
           onClick={() => handleScrollToSection('hero-section')}
           className="cursor-pointer font-display font-bold text-white tracking-tighter text-base px-3.5"
         >
-          Richa<span className="text-indigo-500 font-mono font-normal">.R</span>
+          Richa<span className="text-red-500 font-mono font-normal bg-gradient-to-r from-rose-500 to-purple-500 bg-clip-text text-transparent">.R</span>
         </button>
 
         {/* Scroll spy list */}
@@ -89,11 +89,11 @@ export default function Navigation({ onOpenPdfMode }: NavigationProps) {
                 onClick={() => handleScrollToSection(item.id)}
                 className={`cursor-pointer px-3.5 py-2 rounded-xl transition-all flex items-center space-x-1.5 ${
                   isActive
-                    ? 'bg-slate-900 text-white border border-slate-800'
-                    : 'hover:text-white hover:bg-slate-950/40'
+                    ? 'bg-slate-900/90 text-white border border-slate-800'
+                    : 'hover:text-white hover:bg-slate-950/30'
                 }`}
               >
-                <Icon size={12} className={isActive ? 'text-indigo-400' : 'text-slate-500'} />
+                <Icon size={12} className={isActive ? 'text-rose-450' : 'text-slate-550'} />
                 <span>{item.label}</span>
               </button>
             );
@@ -103,7 +103,7 @@ export default function Navigation({ onOpenPdfMode }: NavigationProps) {
         {/* Action item: printable cv overlay trigger */}
         <button
           onClick={onOpenPdfMode}
-          className="cursor-pointer font-mono text-xs bg-indigo-505/10 text-indigo-400 hover:text-white hover:bg-indigo-600 px-4 py-2 rounded-xl border border-indigo-500/20 shadow-md transition-all flex items-center space-x-1.5"
+          className="cursor-pointer font-mono text-xs bg-rose-950/20 text-rose-400 hover:text-white hover:bg-rose-900/30 px-4 py-2 rounded-xl border border-rose-900/30 shadow-md transition-all flex items-center space-x-1.5"
         >
           <FileDown size={13} />
           <span>Interactive CV</span>
@@ -111,7 +111,7 @@ export default function Navigation({ onOpenPdfMode }: NavigationProps) {
       </header>
 
       {/* Floating Bottom Navigation ergonomics (Mobile Layout only) */}
-      <nav className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 w-[95%] max-w-md md:hidden bg-[#090a0f]/80 border border-slate-900/60 backdrop-blur-md p-2 rounded-2xl flex items-center justify-around select-none shadow-[2px_10px_30px_rgba(0,0,0,0.6)]">
+      <nav className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 w-[95%] max-w-md md:hidden bg-[#000000]/90 border border-slate-900/60 backdrop-blur-md p-2 rounded-2xl flex items-center justify-around select-none shadow-[2px_10px_30px_rgba(0,0,0,0.6)]">
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = activeSection === item.id;
@@ -121,7 +121,7 @@ export default function Navigation({ onOpenPdfMode }: NavigationProps) {
               key={item.id}
               onClick={() => handleScrollToSection(item.id)}
               className={`cursor-pointer p-2.5 rounded-xl transition-all flex flex-col items-center relative ${
-                isActive ? 'text-indigo-400' : 'text-slate-400'
+                isActive ? 'text-rose-400' : 'text-slate-400'
               }`}
             >
               <Icon size={16} />
@@ -129,7 +129,7 @@ export default function Navigation({ onOpenPdfMode }: NavigationProps) {
               {isActive && (
                 <motion.div
                   layoutId="mobile-nav-dot"
-                  className="absolute -bottom-1 w-1.5 h-1.5 rounded-full bg-indigo-500 shadow-md shadow-indigo-500/50"
+                  className="absolute -bottom-1 w-1.5 h-1.5 rounded-full bg-rose-500 shadow-md shadow-rose-500/50"
                   transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                 />
               )}
@@ -140,7 +140,7 @@ export default function Navigation({ onOpenPdfMode }: NavigationProps) {
         {/* PDF/Print mode for ergonomics */}
         <button
           onClick={onOpenPdfMode}
-          className="cursor-pointer p-2.5 rounded-xl text-emerald-400 flex flex-col items-center"
+          className="cursor-pointer p-2.5 rounded-xl text-rose-405 flex flex-col items-center"
         >
           <FileDown size={16} />
           <span className="text-[9px] font-mono mt-0.5 tracking-wider">CV</span>

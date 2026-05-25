@@ -5,7 +5,7 @@ export const resumeData: ResumeData = {
     name: "Richa Rameshkrishna",
     title: "Software Engineer | Backend & Full-Stack | ML Systems",
     summary: "Software engineer with experience building scalable systems, APIs, and production applications across healthcare, enterprise, and travel tech. Proven expertise in full-stack development (backend & frontend), cloud infrastructure, big data processing, and ML systems integration. Delivered a RAG-powered chatbot serving 500 users, built data pipelines processing 2,410 datasets with 99% accuracy, and optimized systems handling 5,000 daily requests. Strong in problem-solving, system design, cross-functional collaboration, and shipping features that drive measurable impact.",
-    location: "Chicago, IL (open to relocation)",
+    location: "Chicago, IL | Open to Relocation",
     email: "richaramesh0220@gmail.com", // Alternate format: richaramesh2002@gmail.com is also captured!
     phone: "+1 (872) 368-3552",
     linkedin: "https://www.linkedin.com/in/richa-ramesh",
@@ -23,43 +23,6 @@ export const resumeData: ResumeData = {
         "Designed and deployed a REST API integrating a PyTorch LSTM model (99.3% reconstruction accuracy) with clinical dashboards, delivering real-time predictions to downstream consumers with sub-second response times.",
         "Built an automated testing framework with custom JUnit 5 assertion libraries and compliance validators, cutting manual QA time by 60% and enforcing data integrity standards across the pipeline.",
         "Architected with a modular backend with clearly separated ingestion, inference, and reporting layers, enabling new data sources to be onboarded without changes to core business logic."
-      ]
-    },
-    {
-      company: "University of Illinois Chicago",
-      role: "Graduate Hourly - Teaching Assistant",
-      dates: "Jan 2026 \u2013 May 2026",
-      location: "Chicago, IL",
-      category: "academic",
-      bullets: [
-        "Served as Graduate Hourly Teaching Assistant for Course - MGMT 460 Managing Globally."
-      ]
-    },
-    {
-      company: "University of Illinois Chicago",
-      role: "Graduate Hourly - Capsim Coach",
-      dates: "Jan 2025 \u2013 May 2026",
-      location: "Chicago, IL",
-      category: "academic",
-      bullets: [
-        "Gained proficiency in the CAPSIM business simulation platform within 2 weeks to support instructional delivery.",
-        "Managed and maintained Blackboard course content, ensuring accurate and up-to-date resources for students.",
-        "Held regular office hours to assist approximately 50 student groups with simulation strategy, decision-making, and performance analysis.",
-        "Provided one-on-one and group-based guidance to clarify CAPSIM concepts, strategies, and technical troubleshooting.",
-        "Created and delivered customized presentations, supporting faculty across various departments in effectively implementing the CAPSIM component."
-      ]
-    },
-    {
-      company: "University of Illinois Chicago",
-      role: "Graduate Hourly - Teaching Assistant",
-      dates: "Aug 2025 \u2013 Dec 2025",
-      location: "Chicago, IL",
-      category: "academic",
-      bullets: [
-        "Served as Graduate Hourly Teaching Assistant for Course - IDS 532 - Intro to Operations Management.",
-        "Managed grading and academic coordination for a 90+ student MBA course.",
-        "Maintained centralized gradebooks and communication via Blackboard.",
-        "Provided consistent student support and course administration throughout the term."
       ]
     },
     {
@@ -177,16 +140,19 @@ export const resumeData: ResumeData = {
   ],
   publications: [
     {
-      title: "Latent NeuroNet: A Text-Conditioned Stable Diffusion Framework for Reconstructing Visual Stimuli from fMRI",
-      subtitle: "Published in major AI/ML conferences (IEEE/Springer) - Focused on interpreting fMRI visual stimulus using latent diffusion."
+      title: "LatentNeuroNet: A Text-Conditioned Stable Diffusion Framework for Reconstructing Visual Stimuli from fMRI",
+      subtitle: "2025 | Book chapter | DOI: 10.1007/978-3-031-70906-7_19 | Contributors: Shreyas Battula, Shyam Krishna Kirithivasan, Aditi Soori, Richa Ramesh, Ramamoorthy Srinath",
+      url: "https://doi.org/10.1007/978-3-031-70906-7_19"
     },
     {
-      title: "Revolutionizing Healthcare: A Review Unveiling the Transformative power of Digital Twins",
-      subtitle: "Published in major AI/ML conferences (IEEE/Springer) - Detailed survey analyzing the landscape of real-time clinical modeling."
+      title: "Revolutionizing Healthcare: A Review Unveiling the Transformative Power of Digital Twins",
+      subtitle: "IEEE Access | 2024 | Journal article | DOI: 10.1109/ACCESS.2024.3399744 | Contributors: Adithya Balasubramanyam, Richa Ramesh, Rhea Sudheer, Prasad B. Honnavalli",
+      url: "https://doi.org/10.1109/ACCESS.2024.3399744"
     },
     {
-      title: "Leukaemia: A comparative analysis of deep learning models using ALL dataset",
-      subtitle: "Published in major AI/ML conferences (IEEE/Springer) - Rigorous neural benchmark for automatic cancer cell classification."
+      title: "Leukaemia: A Comparative Analysis of Deep Learning Models Using ALL Dataset",
+      subtitle: "2024-05-16 | Conference paper | DOI: 10.1109/RAICS61201.2024.10689761 | Contributors: Rhea Sudheer, Rapaka Vivek, Richa Ramesh, Apoorva Sarvade, Sada Kakarla, Preethi P",
+      url: "https://doi.org/10.1109/RAICS61201.2024.10689761"
     }
   ],
   skills: [
