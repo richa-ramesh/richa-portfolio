@@ -20,21 +20,11 @@ const EXCLUDED_REPOS = new Set([
   'albumy-ml',
   'academic-ir-search-engine',
   'autonomous-gazebo-ros2',
-  'pes1ug20cs712_jenkins'
+  'pes1ug20cs712_jenkins',
+  'neural-style-transfer-vgg'
 ]);
 
-const STATIC_FEATURED_PROJECTS: GitHubRepo[] = [
-  {
-    id: 901,
-    name: 'Neural-Style-Transfer-VGG',
-    description: 'Dynamic neural artistic style transfer based on VGG19 deep neural network. Supports custom weights initialization and gram loss optimization curves.',
-    html_url: 'https://github.com/richa-ramesh/Neural-Style-Transfer-VGG',
-    stargazers_count: 5,
-    forks_count: 2,
-    language: 'Python',
-    updated_at: '2025-11-20T14:22:15Z'
-  }
-];
+const STATIC_FEATURED_PROJECTS: GitHubRepo[] = [];
 
 // Helper to beautify repo attributes at runtime for an elevated UI/UX
 export function getBeautifiedDetails(name: string, originalDescription: string | null, language: string | null) {
@@ -189,17 +179,10 @@ export default function Projects() {
       {/* Editorial Title */}
       <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-slate-900 pb-6 mb-12">
         <div className="space-y-3">
-          <div className="flex items-center space-x-2 text-rose-400 font-mono text-xs uppercase tracking-widest leading-none">
-            <Sparkles size={12} className="text-rose-550 animate-pulse" />
-            <span className="bg-gradient-to-r from-rose-500 to-purple-400 bg-clip-text text-transparent font-bold">Interactive Repository Sync</span>
-          </div>
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white font-display">
             Technical Projects & Code
           </h2>
         </div>
-        <p className="text-xs text-slate-500 font-serif max-w-md mt-4 md:mt-0 leading-relaxed italic pr-2">
-          Real-time interface communicating with the GitHub API schema to fetch active research compilations and developer components at runtime.
-        </p>
       </div>
 
       {/* Control Panel: Search & Filters */}

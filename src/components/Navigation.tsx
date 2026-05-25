@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
-import { Briefcase, Trophy, GraduationCap, Layers, BookOpen, FileDown, ArrowUp } from 'lucide-react';
+import { Briefcase, Trophy, GraduationCap, Layers, BookOpen, FileDown, ArrowUp, Code2 } from 'lucide-react';
 
 interface NavigationProps {
   onOpenPdfMode: () => void;
@@ -11,6 +11,7 @@ const navItems = [
   { id: 'experience-section', label: 'Work', icon: Briefcase },
   { id: 'achievements-section', label: 'Impact', icon: Trophy },
   { id: 'skills-section', label: 'Skills', icon: Layers },
+  { id: 'projects', label: 'Projects', icon: Code2 },
   { id: 'publications-section', label: 'Papers', icon: BookOpen },
   { id: 'education-section', label: 'Edu', icon: GraduationCap },
 ];
